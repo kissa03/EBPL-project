@@ -1,0 +1,74 @@
+import pandas as pd
+import numpy as np
+import random
+
+# Set random seed for reproducibility
+np.random.seed(42)
+
+# Number of synthetic rows to generate
+num_rows = 5000
+
+# Define possible values
+weather_conditions = ['Clear', 'Rain', 'Snow', 'Fog', 'Thunderstorm', 'Cloudy']
+sunrise_sunset = ['Day', 'Night']
+severities = [1, 2, 3, 4]  # Severity levels
+
+# Generate synthetic data
+data = {
+    'Severity': np.random.choice(severities, num_rows, p=[0.1, 0.6, 0.25, 0.05]),
+    'Start_Lat': np.random.uniform(25.0, 49.0, num_rows),
+    'Start_Lng': np.random.uniform(-125.0, -67.0, num_rows),
+    'Distance(mi)': np.round(np.random.exponential(scale=0.5, size=num_rows), 2),
+    'Temperature(F)': np.round(np.random.normal(60, 15, num_rows), 2),
+    'Humidity(%)': np.round(np.random.uniform(10, 100, num_rows), 2),
+    'Pressure(in)': np.round(np.random.normal(30, 0.5, num_rows), 2),
+    'Visibility(mi)': np.round(np.random.uniform(0.1, 10, num_rows), 2),
+    'Wind_Speed(mph)': np.round(np.random.exponential(scale=5, size=num_rows), 2),
+    'Weather_Condition': np.random.choice(weather_conditions, num_rows),
+    'Sunrise_Sunset': np.random.choice(sunrise_sunset, num_rows)
+}
+
+# Create DataFrame
+df_synthetic = pd.DataFrame(data)
+
+# Save to CSV
+df_synthetic.to_csv("US_Accidents_March23.csv", index=False)
+
+print("Synthetic dataset 'US_Accidents_March23.csv' created successfully.")
+import pandas as pd
+import numpy as np
+import random
+
+# Set random seed for reproducibility
+np.random.seed(42)
+
+# Number of synthetic rows to generate
+num_rows = 5000
+
+# Define possible values
+weather_conditions = ['Clear', 'Rain', 'Snow', 'Fog', 'Thunderstorm', 'Cloudy']
+sunrise_sunset = ['Day', 'Night']
+severities = [1, 2, 3, 4]  # Severity levels
+
+# Generate synthetic data
+data = {
+    'Severity': np.random.choice(severities, num_rows, p=[0.1, 0.6, 0.25, 0.05]),
+    'Start_Lat': np.random.uniform(25.0, 49.0, num_rows),
+    'Start_Lng': np.random.uniform(-125.0, -67.0, num_rows),
+    'Distance(mi)': np.round(np.random.exponential(scale=0.5, size=num_rows), 2),
+    'Temperature(F)': np.round(np.random.normal(60, 15, num_rows), 2),
+    'Humidity(%)': np.round(np.random.uniform(10, 100, num_rows), 2),
+    'Pressure(in)': np.round(np.random.normal(30, 0.5, num_rows), 2),
+    'Visibility(mi)': np.round(np.random.uniform(0.1, 10, num_rows), 2),
+    'Wind_Speed(mph)': np.round(np.random.exponential(scale=5, size=num_rows), 2),
+    'Weather_Condition': np.random.choice(weather_conditions, num_rows),
+    'Sunrise_Sunset': np.random.choice(sunrise_sunset, num_rows)
+}
+
+# Create DataFrame
+df_synthetic = pd.DataFrame(data)
+
+# Save to CSV
+df_synthetic.to_csv("US_Accidents_March23.csv", index=False)
+
+print("Synthetic dataset 'US_Accidents_March23.csv' created successfully.")
